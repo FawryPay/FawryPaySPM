@@ -1,0 +1,11 @@
+framework module FawryPaySDK {
+  umbrella header "FawryPaySDK.h"
+  export *
+
+  module * { export * }
+}
+
+module FawryPaySDK.Swift {
+  header "FawryPaySDK-Swift.h"
+  requires objc
+}
