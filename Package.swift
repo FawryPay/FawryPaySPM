@@ -26,7 +26,6 @@ let package = Package(
             dependencies: [
                 "FawryPaySDK",
                 .product(name: "Alamofire", package: "Alamofire"),
-                .product(name: "netfox", package: "netfox"),
                 .product(name: "IQKeyboardManagerSwift", package: "IQKeyboardManager"),
               ],
         ),
