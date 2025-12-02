@@ -15,7 +15,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.10.2"),
-        .package(url: "https://github.com/hackiftekhar/IQKeyboardManager.git", from: "6.5.16"))
+        .package(url: "https://github.com/hackiftekhar/IQKeyboardManager.git", from: "6.5.16")
     ],
     targets: [
          //Targets are the basic building blocks of a package, defining a module or a test suite.
