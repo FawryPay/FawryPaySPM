@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.2.1 effective-5.10 (swiftlang-6.2.1.4.8 clang-1700.4.4.1)
-// swift-module-flags: -target x86_64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FawryPaySDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
+// swift-compiler-version: Apple Swift version 6.3.1 effective-5.10 (swiftlang-6.3.1.1.2 clang-2100.0.123.102)
+// swift-module-flags: -target x86_64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name FawryPaySDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.1
 import AVFoundation
 import AVKit
 import Accelerate
@@ -71,9 +71,7 @@ public class PaymentMethods : Swift.Codable {
   public var offersModel: [FawryPaySDK.OfferModel]?
   public var paymentMethodExtraFees: [FawryPaySDK.PaymentMethodExtraFees]?
   public var paymetMethodImage: UIKit.UIImage?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(code: Swift.String? = nil, enable: Swift.Bool? = nil, id: Swift.Int? = nil, name: Swift.String? = nil, cardHolderName: Swift.String? = nil, selected: Swift.Bool? = nil, fixedFees: Swift.Double? = nil, maxPercentageFees: Swift.Double? = nil, minPercentageFees: Swift.Double? = nil, percentageFees: Swift.Double? = nil, balance: Swift.Double? = nil, paymentMethodExtraFees: [FawryPaySDK.PaymentMethodExtraFees]? = nil, externalCallBack: FawryPaySDK.ExternalCallBackType = nil, paymetMethodImage: UIKit.UIImage? = nil)
-  #endif
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -133,21 +131,13 @@ public class AccountTypes : Swift.Codable {
     case masterCard
     case meezaCard
     case visaCard
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
-    #endif
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(stringValue: Swift.String)
-    #endif
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(intValue: Swift.Int)
-    #endif
     public typealias RawValue = Swift.String
-    #if compiler(>=5.3) && $NonescapableTypes
     public var intValue: Swift.Int? {
       get
     }
-    #endif
     public var rawValue: Swift.String {
       get
     }
@@ -160,17 +150,11 @@ public class AccountTypes : Swift.Codable {
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers public class FawrySDKConfigurationManager : ObjectiveC.NSObject {
-  #if compiler(>=5.3) && $NonescapableTypes
   public class var shared: FawryPaySDK.FawrySDKConfigurationManager! {
     get
   }
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func loadConfigurations(with baseURL: Swift.String? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func setAppLanguage(lang: Swift.String?)
-  #endif
   public func getServerAddress() -> Swift.String
   public func getAppLanguage() -> Swift.String
   @objc override dynamic public init()
@@ -195,22 +179,14 @@ public struct OrderPriceDetails : Swift.Codable {
   public let totalAmount: Swift.Double?
   public let fawryFees: Swift.Double?
   public let taxes: Swift.Double?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(subTotal: Swift.Double?, totalAmount: Swift.Double?, fawryFees: Swift.Double?, taxes: Swift.Double?)
-  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
 @objc public class LaunchCustomerModel : ObjectiveC.NSObject, Swift.Codable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(customerName: Swift.String?, customerEmail: Swift.String?, customerMobile: Swift.String?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(customerName: Swift.String?, customerEmail: Swift.String?, customerMobile: Swift.String?, customerProfileId: Swift.String?, token: Swift.String? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(customerName: Swift.String?, customerEmail: Swift.String?, customerMobile: Swift.String?, token: Swift.String?, customerProfileId: Swift.String?)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -226,9 +202,7 @@ public enum MWalletOption {
 public class MWalletInfo {
   public var selectedOption: FawryPaySDK.MWalletOption
   public var mobNum: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(selectedOption: FawryPaySDK.MWalletOption, mobNum: Swift.String?)
-  #endif
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class BankInfo : Swift.Codable {
@@ -251,34 +225,22 @@ public struct Api {
   public static func apiCallWithDeviceInfo(endpoint: Swift.String, parameters: [Swift.String : Any], completion: @escaping FawryPaySDK.Api.ApiCompletion)
 }
 public class LaunchApplePayModel : Swift.Codable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(merchantID: Swift.String?)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class BlurView : UIKit.UIView {
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency public func maskToRoi(roi: UIKit.UIView)
   @objc deinit
 }
 extension UIKit.UIView {
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func makeToast(_ message: Swift.String?, duration: Foundation.TimeInterval = ToastManager.shared.duration, position: FawryPaySDK.ToastPosition = ToastManager.shared.position, title: Swift.String? = nil, image: UIKit.UIImage? = nil, style: FawryPaySDK.ToastStyle = ToastManager.shared.style, completion: ((_ didTap: Swift.Bool) -> Swift.Void)? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func makeToast(_ message: Swift.String?, duration: Foundation.TimeInterval = ToastManager.shared.duration, point: CoreFoundation.CGPoint, title: Swift.String?, image: UIKit.UIImage?, style: FawryPaySDK.ToastStyle = ToastManager.shared.style, completion: ((_ didTap: Swift.Bool) -> Swift.Void)?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func showToast(_ toast: UIKit.UIView, duration: Foundation.TimeInterval = ToastManager.shared.duration, position: FawryPaySDK.ToastPosition = ToastManager.shared.position, completion: ((_ didTap: Swift.Bool) -> Swift.Void)? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func showToast(_ toast: UIKit.UIView, duration: Foundation.TimeInterval = ToastManager.shared.duration, point: CoreFoundation.CGPoint, completion: ((_ didTap: Swift.Bool) -> Swift.Void)? = nil)
-  #endif
   @_Concurrency.MainActor @preconcurrency public func hideToast()
   @_Concurrency.MainActor @preconcurrency public func hideToast(_ toast: UIKit.UIView)
   @_Concurrency.MainActor @preconcurrency public func hideAllToasts(includeActivity: Swift.Bool = false, clearQueue: Swift.Bool = true)
@@ -286,9 +248,7 @@ extension UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency public func makeToastActivity(_ position: FawryPaySDK.ToastPosition)
   @_Concurrency.MainActor @preconcurrency public func makeToastActivity(_ point: CoreFoundation.CGPoint)
   @_Concurrency.MainActor @preconcurrency public func hideToastActivity()
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func toastViewForMessage(_ message: Swift.String?, title: Swift.String?, image: UIKit.UIImage?, style: FawryPaySDK.ToastStyle) throws -> UIKit.UIView
-  #endif
 }
 public struct ToastStyle {
   public init()
@@ -327,11 +287,9 @@ public struct ToastStyle {
   public var activityBackgroundColor: UIKit.UIColor
 }
 @_hasMissingDesignatedInitializers public class ToastManager {
-  #if compiler(>=5.3) && $NonescapableTypes
   public class var shared: FawryPaySDK.ToastManager! {
     get
   }
-  #endif
   public var style: FawryPaySDK.ToastStyle
   public var isTapToDismissEnabled: Swift.Bool
   public var isQueueEnabled: Swift.Bool
@@ -351,12 +309,8 @@ public enum ToastPosition {
 }
 @objc @_inheritsConvenienceInitializers public class E_WalletManager : ObjectiveC.NSObject {
   public func E_WalletManagerLauncher(onPayWalletUsingMobileNumberCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>, onPayUsingQRCodeCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>, onVerifyPayUsingWalletCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payWalletUsingMobileNumber(with mobileNumber: Swift.String, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payByWalletUsingQRCode(validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil)
-  #endif
   public func verifyPayUsingWallet(with orderRefNum: Swift.String, isCheckNow: Swift.Bool = false)
   @objc override dynamic public init()
   @objc deinit
@@ -364,14 +318,10 @@ public enum ToastPosition {
 public struct FilterCriteria {
 }
 @objc public protocol TestingImageDataSource {
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc func nextImage() -> CoreGraphics.CGImage?
-  #endif
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency open class ScanBaseViewController : UIKit.UIViewController, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate, FawryPaySDK.ScanEvents {
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func onNumberRecognized(number: Swift.String, expiry: FawryPaySDK.Expiry?, cardImage: CoreGraphics.CGImage, numberBoundingBox: CoreFoundation.CGRect, expiryBoundingBox: CoreFoundation.CGRect?)
-  #endif
   @_Concurrency.MainActor @preconcurrency public func onScanComplete(scanStats: FawryPaySDK.ScanStats)
   @objc @_Concurrency.MainActor @preconcurrency weak public var testingImageDataSource: (any FawryPaySDK.TestingImageDataSource)?
   @objc @_Concurrency.MainActor @preconcurrency public var errorCorrectionDuration: Swift.Double
@@ -379,26 +329,16 @@ public struct FilterCriteria {
   @objc @_Concurrency.MainActor @preconcurrency public var showDebugImageView: Swift.Bool
   @_Concurrency.MainActor @preconcurrency public var scanEventsDelegate: (any FawryPaySDK.ScanEvents)?
   @_Concurrency.MainActor @preconcurrency public static let machineLearningQueue: Dispatch.DispatchQueue
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency open func onScannedCard(number: Swift.String, expiryYear: Swift.String?, expiryMonth: Swift.String?, scannedImage: UIKit.UIImage?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency open func showCardNumber(_ number: Swift.String, expiry: Swift.String?)
-  #endif
   @_Concurrency.MainActor @preconcurrency public func toggleTorch()
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func configure(apiKey: Swift.String? = nil)
-  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func isCompatible() -> Swift.Bool
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func cameraImage() -> UIKit.UIImage?
-  #endif
   @_Concurrency.MainActor @preconcurrency public func cancelScan()
   @_Concurrency.MainActor @preconcurrency public func setUpCorners()
   @_Concurrency.MainActor @preconcurrency public func startCameraPreview()
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func setupOnViewDidLoad(regionOfInterestLabel: UIKit.UILabel, blurView: FawryPaySDK.BlurView, previewView: FawryPaySDK.PreviewView, cornerView: FawryPaySDK.CornerView, debugImageView: UIKit.UIImageView?)
-  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open var shouldAutorotate: Swift.Bool {
     @objc get
   }
@@ -413,21 +353,15 @@ public struct FilterCriteria {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency public func getScanStats() -> FawryPaySDK.ScanStats
   @_Concurrency.MainActor @preconcurrency @objc public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
-  #endif
   @objc deinit
 }
 public struct CallBacks<T> {
   public var onStartBlock: (FawryPaySDK.FawryError?) -> Swift.Void
   public var onErrorBlock: (FawryPaySDK.FawryError?) -> Swift.Void
   public var onCompleteBlock: (T?) -> Swift.Void
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(onStartBlock: @escaping (FawryPaySDK.FawryError?) -> Swift.Void, onErrorBlock: @escaping (FawryPaySDK.FawryError?) -> Swift.Void, onCompleteBlock: @escaping (T?) -> Swift.Void)
-  #endif
 }
 public enum NetworkError : Swift.Error, Swift.CustomStringConvertible, Swift.Codable {
   case Unknown
@@ -448,9 +382,7 @@ public enum NetworkError : Swift.Error, Swift.CustomStringConvertible, Swift.Cod
   public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers public class CreditCardManager : ObjectiveC.NSObject {
-  #if compiler(>=5.3) && $NonescapableTypes
   public func CreditCardManagerLauncher(onGetMerchantInfoCallBack: FawryPaySDK.CallBacks<FawryPaySDK.MerchantModel>?, onGetSavedCardsCallBack: FawryPaySDK.CallBacks<[FawryPaySDK.SavedCard]>?, onGetSavedYellowCardsCallBack: FawryPaySDK.CallBacks<[FawryPaySDK.SavedCard]>?, onFiltredInstallmentPlansCallBack: FawryPaySDK.CallBacks<[FawryPaySDK.InstallmentPlansData]>?, onUpdateCardHolderNameCallBack: FawryPaySDK.CallBacks<FawryPaySDK.CardDetails>?, onSavedCardCallBack: FawryPaySDK.CallBacks<FawryPaySDK.CardDetails>?, deleteSavedCardCallBack: FawryPaySDK.CallBacks<FawryPaySDK.FawrySDKStatusCode>?, onPayUsingCreditCardDetailsCallBack: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>?, onPayUsingYellowCardDetailsCallBack: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>?, onPayUsingCardTokenCallBack: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>?, onPayUsingYellowCardTokenCallBack: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>?, viewController: UIKit.UIViewController?)
-  #endif
   public func getSavedYellowCardsList(callBacks: FawryPaySDK.CallBacks<[FawryPaySDK.SavedCard]>)
   public func getMerchantInfoStep1()
   public func getSavedCardsStep2()
@@ -459,18 +391,10 @@ public enum NetworkError : Swift.Error, Swift.CustomStringConvertible, Swift.Cod
   public func updateCardHolderNameStep4(with updateCardHolderNameModel: FawryPaySDK.CardHolderNameModel)
   public func addNewCardStep5(with card: FawryPaySDK.CardDetailsModel)
   public func deleteSavedCardStep5_5(with card: FawryPaySDK.SavedCard)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payUsingCreditCardDetailsStep6(with card: FawryPaySDK.SavedCard, installmentPlanId: Swift.Int, selectedPlan: FawryPaySDK.InstallmentPlansData?, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil, appliedLoyalty: FawryPaySDK.RedeemedLoyaltyModel? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payUsingYellowCardDetailsStep6_6(with card: FawryPaySDK.SavedCard, installmentPlanId: Swift.Int, selectedPlan: FawryPaySDK.InstallmentPlansData?, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil, appliedLoyalty: FawryPaySDK.RedeemedLoyaltyModel? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payUsingCardTokenStep7(with card: FawryPaySDK.SavedCard, installmentPlanId: Swift.Int, cvv: Swift.String, selectedPlan: FawryPaySDK.InstallmentPlansData?, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil, appliedLoyalty: FawryPaySDK.RedeemedLoyaltyModel? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payUsingYellowCardTokenStep7_7(with card: FawryPaySDK.SavedCard, installmentPlanId: Swift.Int, cvv: Swift.String, selectedPlan: FawryPaySDK.InstallmentPlansData?, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil, appliedLoyalty: FawryPaySDK.RedeemedLoyaltyModel? = nil)
-  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -483,53 +407,35 @@ public protocol ViewModelPressible {
 @objc @_inheritsConvenienceInitializers public class ValuManager : ObjectiveC.NSObject {
   public func valuManagerLauncher(onGetCustomerStatusCallBacks: FawryPaySDK.CallBacks<Swift.Bool>, onValuInstallmentPlansCallBacks: FawryPaySDK.CallBacks<[FawryPaySDK.TenureItem]>, onValuInstallmentPlansSeamlessCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.GetValuInstallmentPlansResponse>, onUpdateSelectedPlanCallBacks: FawryPaySDK.CallBacks<Swift.Bool>, onVerifyCustomerCallBacks: FawryPaySDK.CallBacks<Swift.Bool>, onVerifyCustomerSeamlessCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.ValuCustomerVerificationResponse>, onValidOTPCallBacks: FawryPaySDK.CallBacks<Swift.Bool>, onValidOTPSeamlessCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.ValuValidateOTPResponse>, onPayUsingValuCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>)
   public func getCustomerStatus(valuCustomerNumber: Swift.String, callBacks: FawryPaySDK.CallBacks<Swift.Bool>)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getValuInstallmentPlans(valuCustomerNumber: Swift.String, filterCriteria: FawryPaySDK.FilterCriteria, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil, callBacks: FawryPaySDK.CallBacks<[FawryPaySDK.TenureItem]>)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getValuInstallmentPlansSeamless(valuCustomerNumber: Swift.String, filterCriteria: FawryPaySDK.FilterCriteria, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.GetValuInstallmentPlansResponse>)
-  #endif
   public func updateWithSelectedPlan(selectedPlan: FawryPaySDK.TenureItem, callBacks: FawryPaySDK.CallBacks<Swift.Bool>)
   public func verifyCustomer(resendOTP: Swift.Bool = false, callBacks: FawryPaySDK.CallBacks<Swift.Bool>) -> Swift.String
   public func verifyCustomerSeamless(resendOTP: Swift.Bool = false, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.ValuCustomerVerificationResponse>) -> Swift.String
   public func validateOTP(otpString: Swift.String, callBacks: FawryPaySDK.CallBacks<Swift.Bool>) -> Swift.String
   public func validateOTPSeamless(otpString: Swift.String, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.ValuValidateOTPResponse>) -> Swift.String
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payUsingValu(otpString: Swift.String, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>) -> Swift.String
-  #endif
   public func getCustomerStatusStep1(valuCustomerNumber: Swift.String)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getValuInstallmentPlansStep2(valuCustomerNumber: Swift.String, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil, filterCriteria: FawryPaySDK.FilterCriteria)
-  #endif
   public func updateSelectedPlanStep3(selectedPlan: FawryPaySDK.TenureItem)
   public func verifyCustomerStep4(resendOTP: Swift.Bool = false) -> Swift.String
   public func validOTPStep5(otpString: Swift.String) -> Swift.String
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payUsingValuStep6(otpString: Swift.String, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil) -> Swift.String
-  #endif
   @objc override dynamic public init()
   @objc deinit
 }
 public class ChargeItemsParamsModel : Swift.Codable {
   public var variantCode: Swift.String?
   public var reservationCodes: [Swift.String]?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(itemId: Swift.String, charge_description: Swift.String? = nil, price: Swift.Double, quantity: Swift.Int)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(itemId: Swift.String, charge_description: Swift.String? = nil, price: Swift.Double, quantity: Swift.Int, account: [FawryPaySDK.Accounts]? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(itemId: Swift.String, charge_description: Swift.String? = nil, price: Swift.Double, quantity: Swift.Int, variantCode: Swift.String, reservationCodes: [Swift.String])
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 public class Accounts : Swift.Codable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(accountCode: Swift.String?, amount: Swift.Double?)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -568,21 +474,13 @@ public struct ForsaInstallmentPlanModel : Swift.Codable {
     case catID
     case brandID
     case calcAdminFees, calcInterestRate, totalInterest, totalOrderAmountWithInterest, monthAmount
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
-    #endif
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(stringValue: Swift.String)
-    #endif
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(intValue: Swift.Int)
-    #endif
     public typealias RawValue = Swift.String
-    #if compiler(>=5.3) && $NonescapableTypes
     public var intValue: Swift.Int? {
       get
     }
-    #endif
     public var rawValue: Swift.String {
       get
     }
@@ -590,9 +488,7 @@ public struct ForsaInstallmentPlanModel : Swift.Codable {
       get
     }
   }
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(id: Swift.Int?, title: Swift.String?, titleEn: Swift.String?, titleAr: Swift.String?, interestRate: Swift.Double?, interestType: Swift.String?, months: Swift.Int?, earlySettlementFees: Swift.Double?, adminFees: FawryPaySDK.AdminFees?, catID: Swift.Int?, brandID: Swift.Int?, calcAdminFees: Swift.Double?, calcInterestRate: Swift.Double?, totalInterest: Swift.Double?, totalOrderAmountWithInterest: Swift.Double?, monthAmount: Swift.Double?)
-  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -630,9 +526,7 @@ public struct BNPLOfferModel : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
 }
 public class LaunchCheckoutModel : Swift.Codable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(scheme: Swift.String?)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -648,9 +542,7 @@ public class LaunchCheckoutModel : Swift.Codable {
   case square
   case diamond
   case underlinedBottom
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
-  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -660,9 +552,7 @@ public class LaunchCheckoutModel : Swift.Codable {
   case numeric
   case alphabet
   case alphaNumeric
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
-  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -690,9 +580,7 @@ public class LaunchCheckoutModel : Swift.Codable {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func awakeFromNib()
   @_Concurrency.MainActor @preconcurrency public func initializeUI()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
-  #endif
   @objc deinit
 }
 extension FawryPaySDK.OTPFieldView : UIKit.UITextFieldDelegate {
@@ -704,12 +592,10 @@ extension FawryPaySDK.OTPFieldView : UIKit.UITextFieldDelegate {
     get
     set
   }
-  #if compiler(>=5.3) && $NonescapableTypes
   public var selectedButton: FawryPaySDK.RadioButtonContainer.Kind? {
     get
     set
   }
-  #endif
   @discardableResult
   override public func addButton(_ button: FawryPaySDK.RadioButtonContainer.Kind) -> Swift.Bool
   public var radioButtonColor: FawryPaySDK.RadioButtonColor? {
@@ -734,12 +620,10 @@ extension FawryPaySDK.OTPFieldView : UIKit.UITextFieldDelegate {
     @objc get
     @objc set
   }
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var borderColor: UIKit.UIColor? {
     @objc get
     @objc set
   }
-  #endif
   @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var shadowRadius: CoreFoundation.CGFloat {
     @objc get
     @objc set
@@ -752,16 +636,12 @@ extension FawryPaySDK.OTPFieldView : UIKit.UITextFieldDelegate {
     @objc get
     @objc set
   }
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var shadowColor: UIKit.UIColor? {
     @objc get
     @objc set
   }
-  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
-  #endif
   @objc deinit
 }
 @objc public class GetSouhoolaInstallmentPlansResponse : ObjectiveC.NSObject, Swift.Codable {
@@ -774,9 +654,7 @@ extension FawryPaySDK.OTPFieldView : UIKit.UITextFieldDelegate {
   public func encode(to encoder: any Swift.Encoder) throws
 }
 public protocol ScanEvents {
-  #if compiler(>=5.3) && $NonescapableTypes
   mutating func onNumberRecognized(number: Swift.String, expiry: FawryPaySDK.Expiry?, cardImage: CoreGraphics.CGImage, numberBoundingBox: CoreFoundation.CGRect, expiryBoundingBox: CoreFoundation.CGRect?)
-  #endif
   mutating func onScanComplete(scanStats: FawryPaySDK.ScanStats)
 }
 public enum AddressErrorMessages : Swift.String {
@@ -794,9 +672,7 @@ public enum AddressErrorMessages : Swift.String {
   case emptyAddressType
   case emptyCourier
   case emptyDeliveryType
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
-  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -811,9 +687,7 @@ extension UIKit.UITableViewCell {
   public var partnerId: Swift.Double?
   public var purchaseItems: [FawryPaySDK.FPPurchaseItem]?
   public var purchaseAmount: Swift.Double?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(language: Swift.String? = nil, coupon: Swift.String? = nil, partnerId: Swift.Double? = nil, purchaseItems: [FawryPaySDK.FPPurchaseItem]? = nil)
-  #endif
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
@@ -822,17 +696,13 @@ extension UIKit.UITableViewCell {
   public var itemSKU: Swift.String?
   public var quantity: Swift.Int?
   public var lineAmount: Swift.Double?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(itemSKU: Swift.String? = nil, quantity: Swift.Int? = nil, lineAmount: Swift.Double? = nil)
-  #endif
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
 public class LaunchMerchantModel : Swift.Codable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(merchantCode: Swift.String?, merchantRefNum: Swift.String?, secureKey: Swift.String?)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -841,9 +711,7 @@ public struct DetectedAllBoxes {
   public func toArray() -> [[Swift.String : Any]]
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class CornerView : UIKit.UIView {
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency public func setFrameSize(roi: UIKit.UIView)
   @_Concurrency.MainActor @preconcurrency public func drawCorners()
@@ -854,18 +722,10 @@ public struct RadioButtonColor {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BaseComponentViewController : FawryPaySDK.BaseViewController {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc @IBAction @_Concurrency.MainActor @preconcurrency public func crossTapped(_ sender: Any?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
-  #endif
   @objc deinit
 }
 @objc public class GetValuInstallmentPlansResponse : ObjectiveC.NSObject, Swift.Codable {
@@ -892,52 +752,36 @@ public struct ReviewData : Swift.Codable {
   public let firstInstallmentDate: Swift.String?
   public let lastInstallmentDate: Swift.String?
   public let interestAmount: Swift.Double?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(loanAmount: Swift.Double?, noOfMonths: Swift.Int?, installmentValue: Swift.Double?, financedAmount: Swift.Double?, tenureNumber: Swift.Int?, installmentAmount: Swift.Double?, downpayment: Swift.Double?, adminFees: Swift.Double?, firstInstallmentDate: Swift.String?, lastInstallmentDate: Swift.String?, interestAmount: Swift.Double?)
-  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
 @objc public class VoucherValidationResponse : ObjectiveC.NSObject, Swift.Codable {
   public var giftDescription: Swift.String?
   public var discountAmount: Swift.Double?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(giftDescription: Swift.String? = nil, discountAmount: Swift.Double? = nil)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers public class VoucherManager : ObjectiveC.NSObject {
-  #if compiler(>=5.3) && $NonescapableTypes
   public func VoucherManagerLauncher(onGetValidateVoucherRequestCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.VoucherValidationResponse>?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getValidateVoucherRequest(couponCode: Swift.String, promoPartnerId: Swift.Double?, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.VoucherValidationResponse>)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getValidateVoucherRequest(couponCode: Swift.String, promoPartnerId: Swift.Double?)
-  #endif
   @objc override dynamic public init()
   @objc deinit
 }
 extension UIKit.UITableView {
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func captureFullTableViewContent(cellsIdentifiers: [Swift.String], footerAndHeaderIdentifires: [Swift.String]) -> UIKit.UIImage?
-  #endif
 }
 public class InstallmentPlansData : Swift.Codable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(id: Swift.Int? = 0, installmentPlan: FawryPaySDK.InstallmentPlans? = nil, applyTo: Swift.String? = nil, requiredItemsValidation: Swift.Bool? = nil)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 public struct InstallmentPlans : Swift.Codable, Swift.Equatable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(id: Swift.Int? = 0, nameAr: Swift.String? = nil, nameEn: Swift.String? = nil, rate: Swift.Double? = nil, noOfMonths: Swift.Int? = nil, minAmount: Swift.Double? = nil, maxAmount: Swift.Double? = nil, startDate: Swift.Int64? = nil, endDate: Swift.Int64? = nil, type: Swift.String? = nil, accountType: FawryPaySDK.InstallmentAccountType? = nil, fixedFees: Swift.Double? = nil, upfrontFees: Swift.Double? = nil, perMonthInstallment: Swift.Double? = nil, calcUpfrontFees: Swift.Double? = nil, calcInterestAmount: Swift.Double? = nil)
-  #endif
   public static func == (a: FawryPaySDK.InstallmentPlans, b: FawryPaySDK.InstallmentPlans) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -970,97 +814,10 @@ public class Ocr {
   public var errorCorrectionDuration: Swift.Double
   public init()
   public func userCancelled()
-  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 11.2, *)
   public func performWithErrorCorrection(for rawImage: CoreGraphics.CGImage) -> (Swift.String?, FawryPaySDK.Expiry?, Swift.Bool, Swift.Bool)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 11.2, *)
   public func perform(for rawImage: CoreGraphics.CGImage) -> Swift.String?
-  #endif
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class AnonymousFrameWorkHelper {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public class var sharedInstance: FawryPaySDK.AnonymousFrameWorkHelper! {
-    get
-  }
-  #endif
-  public var amanManager: FawryPaySDK.AmanManager?
-  public var loyaltyManager: FawryPaySDK.LoyaltyManager?
-  public var valuManager: FawryPaySDK.ValuManager?
-  public var souhoolaManager: FawryPaySDK.SouhoolaManager?
-  public var forsaManager: FawryPaySDK.ForsaManager?
-  public var eWalletManager: FawryPaySDK.E_WalletManager?
-  public var creditCardManager: FawryPaySDK.CreditCardManager?
-  public var fawryPayByRefManager: FawryPaySDK.FawryPayByRefManager?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchAnonymousSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchAnonymousValuSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchAnonymousAmanSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchAnonymousForsaSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchAnonymousEWalletSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchAnonymousSouhoolaSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchAnonymousCreditCardSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func llaunchAnonymousInstallmentSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchAnonymousYellowCardSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchCardTokenizerSDK(on baseController: UIKit.UIViewController, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, errorBlock: @escaping FawryPaySDK.onErrorHandler, onAddedNewCard: @escaping FawryPaySDK.AddCardViewController.onAddNewCard, dismissBlock: @escaping FawryPaySDK.AddCardViewController.onDismiss)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchCardManagerSDK(on baseController: UIKit.UIViewController, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, enable3Ds: Swift.Bool = false, errorBlock: @escaping FawryPaySDK.onErrorHandler, onAddedNewCard: @escaping FawryPaySDK.onSuccessHandler, dismissBlock: @escaping FawryPaySDK.onDismissHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchBNBLSeamlessFlows(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchAnonymousApplePaySDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchAnonymousLoyaltySDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  @objc deinit
-}
-extension FawryPaySDK.AnonymousFrameWorkHelper {
-  public func getMerchantReferenceNumber() -> Swift.String
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func getMerchantInfo(baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, merchant: FawryPaySDK.LaunchMerchantModel, orderRefNum: Swift.String, errorBlock: @escaping FawryPaySDK.onErrorHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func checkPaymentStatus(baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, merchant: FawryPaySDK.LaunchMerchantModel, orderRefNum: Swift.String, errorBlock: @escaping FawryPaySDK.onErrorHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  public func handleCheckoutURL(url: Foundation.URL)
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class FawryPayBusinessHelper : ObjectiveC.NSObject {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public class var sharedInstance: FawryPaySDK.FawryPayBusinessHelper! {
-    get
-  }
-  #endif
-  public var creditCardManager: FawryPaySDK.CreditCardManager?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchFawryBusinessCreditCardSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onErrorDetailedHandler: @escaping FawryPaySDK.onErrorDetailedHandler, onSuccessDetailedHandler: @escaping FawryPaySDK.onSuccessDetailedHandler, onPaymentCompletedDetailedHandler: @escaping FawryPaySDK.onPaymentCompletedDetailedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func launchCardManagerSDK(on baseController: UIKit.UIViewController, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, enable3Ds: Swift.Bool = false, errorBlock: @escaping FawryPaySDK.onErrorHandler, onAddedNewCard: @escaping FawryPaySDK.onSuccessHandler, dismissBlock: @escaping FawryPaySDK.onDismissHandler)
-  #endif
   @objc deinit
 }
 @objc public class ValuCustomerVerificationResponse : ObjectiveC.NSObject, Swift.Codable {
@@ -1073,33 +830,25 @@ extension FawryPaySDK.AnonymousFrameWorkHelper {
   public func encode(to encoder: any Swift.Encoder) throws
 }
 public class Governorate : Swift.Codable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(code: Swift.String?, name: Swift.String?, namePrimaryLang: Swift.String?, nameSecondaryLang: Swift.String?, cities: [FawryPaySDK.City]? = nil)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 public class City : Swift.Codable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(code: Swift.String? = nil, name: Swift.String? = nil, namePrimaryLang: Swift.String? = nil, nameSecondaryLang: Swift.String? = nil, area: [FawryPaySDK.Area]? = nil)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 public class Area : Swift.Codable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(code: Swift.String? = nil, name: Swift.String? = nil, namePrimaryLang: Swift.String? = nil, nameSecondaryLang: Swift.String? = nil, street: [FawryPaySDK.Street]? = nil)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 public class Street : Swift.Codable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(code: Swift.String? = nil, name: Swift.String? = nil, namePrimaryLang: Swift.String? = nil, nameSecondaryLang: Swift.String? = nil)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -1107,14 +856,10 @@ public class Street : Swift.Codable {
 @objc @_inheritsConvenienceInitializers public class AmanManager : ObjectiveC.NSObject {
   public func amanManagerLauncher(onGetAmanInstallmentPlansCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.AmanPlansResponse>, onSendOTPCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.AmanOtpResponse>, onPayUsingAmanCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>)
   public func getAmanInstallmentPlans(amanCustomerMobileNumber: Swift.String, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.AmanPlansResponse>)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payUsingAman(orderRefNumber: Swift.String, otpValue: Swift.String, amanMobile: Swift.String, amanInstallmentPlan: FawryPaySDK.AmanInstallmentPlan, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams?, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>)
-  #endif
   public func getAmanInstallmentPlansStep1(amanCustomerMobileNumber: Swift.String)
   public func amanSendOTPStep2(amanCustomerMobileNumber: Swift.String, orderRefNumber: Swift.String)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payUsingAmanStep3(orderRefNumber: Swift.String, otpValue: Swift.String, amanCustomerMobileNumber: Swift.String, amanInstallmentPlan: FawryPaySDK.AmanInstallmentPlan, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams?)
-  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1144,9 +889,7 @@ public struct SavedCard : Swift.Codable {
   public var affirmation: UIKit.UIColor?
   public var negation: UIKit.UIColor?
   public var selectedPlanBackground: UIKit.UIColor?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(theme: UIKit.UIColor?, lightBorder: UIKit.UIColor?, darkBorder: UIKit.UIColor?, shadow: UIKit.UIColor?, darkBackground: UIKit.UIColor?, lightBackground: UIKit.UIColor?, intermidiateBackground: UIKit.UIColor?, darkText: UIKit.UIColor?, lightText: UIKit.UIColor?, intermidiateText: UIKit.UIColor?, affirmation: UIKit.UIColor?, negation: UIKit.UIColor?, selectedPlanBackground: UIKit.UIColor?)
-  #endif
   @objc deinit
 }
 public struct FawryBusinessCallBackModel {
@@ -1161,9 +904,7 @@ public struct AdminFees : Swift.Codable {
   public var id: Swift.Int?
   public var value: Swift.Double?
   public var type: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(id: Swift.Int?, value: Swift.Double?, type: Swift.String?)
-  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -1178,9 +919,7 @@ public enum ErrorCode : Swift.Int {
   case invalidRequest
   case validationFailed
   case failed
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
-  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -1198,9 +937,7 @@ public enum ErrorMessages : Swift.String {
   case invalidPreOrderInputs
   case invalidExternalPaymentMethodsInputs
   case invalidPaymentMethod
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
-  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -1213,9 +950,11 @@ public enum ErrorMessages : Swift.String {
   public var errorStatusCode: Swift.String?
   public var usedBTC: Swift.Int?
   public var refNumber: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(errorCode: Swift.String?, message: Swift.String?, networkError: FawryPaySDK.NetworkError?, errorStatusCode: Swift.String?, usedBTC: Swift.Int? = .none, refNumber: Swift.String? = .none)
-  #endif
+  public var errorId: Swift.String?
+  public var error: Swift.String?
+  public var code: Swift.String?
+  public var originalErrorCode: Swift.String?
+  public init(errorCode: Swift.String?, message: Swift.String?, networkError: FawryPaySDK.NetworkError?, errorStatusCode: Swift.String?, usedBTC: Swift.Int? = .none, refNumber: Swift.String? = .none, errorId: Swift.String? = nil, error: Swift.String? = nil, code: Swift.String? = nil, originalErrorCode: Swift.String? = nil)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -1246,9 +985,7 @@ public enum Payment_Method : Swift.String, Swift.Codable {
   case aman
   case myFawry
   case applePay
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
-  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -1271,9 +1008,8 @@ public enum PaymentMethod : Swift.String, Swift.Codable {
   case aman
   case myFawry
   case applePay
-  #if compiler(>=5.3) && $NonescapableTypes
+  case instapay
   public init?(rawValue: Swift.String)
-  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -1283,9 +1019,7 @@ public enum WalletPaymentMethods : Swift.String, Swift.Codable {
   case scanQR
   case notification
   case none
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
-  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -1293,9 +1027,7 @@ public enum WalletPaymentMethods : Swift.String, Swift.Codable {
 }
 public enum PaymentURLs : Swift.String, Swift.Codable {
   case return3DURL
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
-  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -1308,11 +1040,43 @@ public struct ReviewTransactionResponse : Swift.Codable {
   public let orderPriceDetails: FawryPaySDK.OrderPriceDetails?
   public let success: Swift.Bool?
   public let error: FawryPaySDK.ErrorResponse?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(isSuccess: Swift.Bool?, errors: FawryPaySDK.ErrorResponse?, data: FawryPaySDK.ReviewData?, orderPriceDetails: FawryPaySDK.OrderPriceDetails?, success: Swift.Bool?, error: FawryPaySDK.ErrorResponse?)
-  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers public class AnonymousFrameWorkHelper {
+  public class var sharedInstance: FawryPaySDK.AnonymousFrameWorkHelper! {
+    get
+  }
+  public var amanManager: FawryPaySDK.AmanManager?
+  public var loyaltyManager: FawryPaySDK.LoyaltyManager?
+  public var valuManager: FawryPaySDK.ValuManager?
+  public var souhoolaManager: FawryPaySDK.SouhoolaManager?
+  public var forsaManager: FawryPaySDK.ForsaManager?
+  public var eWalletManager: FawryPaySDK.E_WalletManager?
+  public var creditCardManager: FawryPaySDK.CreditCardManager?
+  public var fawryPayByRefManager: FawryPaySDK.FawryPayByRefManager?
+  public func launchAnonymousSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func launchAnonymousValuSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func launchAnonymousAmanSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func launchAnonymousForsaSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func launchAnonymousEWalletSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func launchAnonymousSouhoolaSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func launchAnonymousCreditCardSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func llaunchAnonymousInstallmentSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func launchAnonymousYellowCardSDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func launchCardTokenizerSDK(on baseController: UIKit.UIViewController, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, errorBlock: @escaping FawryPaySDK.onErrorHandler, onAddedNewCard: @escaping FawryPaySDK.AddCardViewController.onAddNewCard, dismissBlock: @escaping FawryPaySDK.AddCardViewController.onDismiss)
+  public func launchCardManagerSDK(on baseController: UIKit.UIViewController, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, enable3Ds: Swift.Bool = false, errorBlock: @escaping FawryPaySDK.onErrorHandler, onAddedNewCard: @escaping FawryPaySDK.onSuccessHandler, dismissBlock: @escaping FawryPaySDK.onDismissHandler)
+  public func launchBNBLSeamlessFlows(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func launchAnonymousApplePaySDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func launchAnonymousLoyaltySDK(on baseController: UIKit.UIViewController, isAnimating: Swift.Bool = true, customViewNib: Swift.String? = nil, customViewController: UIKit.UIViewController? = nil, launchModel: FawryPaySDK.FawryLaunchModel? = nil, baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, currency: Swift.String? = Currency.egp, enable3Ds: Swift.Bool = false, authCaptureModePayment: Swift.Bool = false, cairoBold: UIKit.UIFont? = nil, cairoSemiBold: UIKit.UIFont? = nil, cairoRegular: UIKit.UIFont? = nil, fawryProBold: UIKit.UIFont? = nil, completionBlock: @escaping FawryPaySDK.onCompletion, onPreCompletionHandler: @escaping FawryPaySDK.onPreCompletion, errorBlock: @escaping FawryPaySDK.onErrorHandler, onPaymentCompletedHandler: @escaping FawryPaySDK.onPaymentCompletedHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  @objc deinit
+}
+extension FawryPaySDK.AnonymousFrameWorkHelper {
+  public func getMerchantReferenceNumber() -> Swift.String
+  public func getMerchantInfo(baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, merchant: FawryPaySDK.LaunchMerchantModel, orderRefNum: Swift.String, errorBlock: @escaping FawryPaySDK.onErrorHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func checkPaymentStatus(baseURL: Swift.String? = nil, appLanguage: Swift.String? = nil, merchant: FawryPaySDK.LaunchMerchantModel, orderRefNum: Swift.String, errorBlock: @escaping FawryPaySDK.onErrorHandler, onSuccessHandler: @escaping FawryPaySDK.onSuccessHandler)
+  public func handleCheckoutURL(url: Foundation.URL)
 }
 public class AmanInstallmentPlan : Swift.Codable, Swift.Equatable {
   public var months: Swift.String?
@@ -1322,21 +1086,13 @@ public class AmanInstallmentPlan : Swift.Codable, Swift.Equatable {
     case months
     case adminFees
     case monthlyAmount
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
-    #endif
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(stringValue: Swift.String)
-    #endif
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(intValue: Swift.Int)
-    #endif
     public typealias RawValue = Swift.String
-    #if compiler(>=5.3) && $NonescapableTypes
     public var intValue: Swift.Int? {
       get
     }
-    #endif
     public var rawValue: Swift.String {
       get
     }
@@ -1344,9 +1100,7 @@ public class AmanInstallmentPlan : Swift.Codable, Swift.Equatable {
       get
     }
   }
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(months: Swift.String?, adminFees: Swift.String?, monthlyAmount: Swift.String?)
-  #endif
   required public init(from decoder: any Swift.Decoder) throws
   public static func == (lhs: FawryPaySDK.AmanInstallmentPlan, rhs: FawryPaySDK.AmanInstallmentPlan) -> Swift.Bool
   @objc deinit
@@ -1364,20 +1118,12 @@ public struct RedeemedLoyaltyModel {
 }
 @objc @_inheritsConvenienceInitializers public class ForsaManager : ObjectiveC.NSObject {
   public func forsaManagerLauncher(onGetForsaInstallmentPlansCallBacks: FawryPaySDK.CallBacks<[FawryPaySDK.GetForsaInstallmentPlansResponse]>, onForsaCreateLoanCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.CreateLoanResponse>, onPayUsingForsaCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getForsaInstallmentPlans(forsaCustomerMobileNumber: Swift.String, downPayment: Swift.Double, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil, callBacks: FawryPaySDK.CallBacks<[FawryPaySDK.GetForsaInstallmentPlansResponse]>)
-  #endif
   public func forsaCreateLoan(forsaCustomerNumber: Swift.String, downPayment: Swift.Double, orderRefNumber: Swift.String, installmentPlan: FawryPaySDK.ForsaInstallmentPlanModel, resendOTP: Swift.Bool = false, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.CreateLoanResponse>)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payUsingForsa(orderRefNumber: Swift.String, otpString: Swift.String, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getForsaInstallmentPlansStep1(forsaCustomerMobileNumber: Swift.String, downPayment: Swift.Double, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil)
-  #endif
   public func forsaCreateLoanStep2(forsaCustomerNumber: Swift.String, downPayment: Swift.Double, orderRefNumber: Swift.String, installmentPlan: FawryPaySDK.ForsaInstallmentPlanModel, resendOTP: Swift.Bool = false)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payUsingForsaStep3(orderRefNumber: Swift.String, otpString: Swift.String, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil)
-  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1396,45 +1142,27 @@ public class CardDetailsModel : Swift.Codable {
   public var cardExpiryYear: Swift.String?
   public var cvv: Swift.String?
   public var cardHolderName: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(card_number: Swift.String?, cardExpiryMonth: Swift.String?, cardExpiryYear: Swift.String?, cvv: Swift.String?, cardHolderName: Swift.String?)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 extension UIKit.UIImage {
-  #if compiler(>=5.3) && $NonescapableTypes
   public func pixelBuffer(width: Swift.Int, height: Swift.Int) -> CoreVideo.CVPixelBuffer?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func pixelBufferGray(width: Swift.Int, height: Swift.Int) -> CoreVideo.CVPixelBuffer?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public func pixelBufferGray() -> CoreVideo.CVPixelBuffer?
-  #endif
   public func areCornerPixelsBlack() -> Swift.Bool
 }
 extension UIKit.UIImage {
-  #if compiler(>=5.3) && $NonescapableTypes
   convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer, context: CoreImage.CIContext)
-  #endif
 }
 extension UIKit.UIImage {
-  #if compiler(>=5.3) && $NonescapableTypes
   @nonobjc public class func fromByteArrayRGBA(_ bytes: [Swift.UInt8], width: Swift.Int, height: Swift.Int, scale: CoreFoundation.CGFloat = 0, orientation: UIKit.UIImage.Orientation = .up) -> UIKit.UIImage?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @nonobjc public class func fromByteArrayGray(_ bytes: [Swift.UInt8], width: Swift.Int, height: Swift.Int, scale: CoreFoundation.CGFloat = 0, orientation: UIKit.UIImage.Orientation = .up) -> UIKit.UIImage?
-  #endif
 }
 public struct TenureItem : Swift.Codable, Swift.Equatable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(tenorMonth: Swift.Int?, adminFees: Swift.Double?, downPayment: Swift.Double?, emi: Swift.Double?)
-  #endif
   public init(from decoder: any Swift.Decoder) throws
   public static func == (a: FawryPaySDK.TenureItem, b: FawryPaySDK.TenureItem) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
@@ -1451,9 +1179,7 @@ public struct CustomerPointsResponse : Swift.Codable {
   public let minRedemptionPoints: Swift.Double?
   public let accountId: Swift.String?
   public let accountTypeCode: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(pointsValue: Swift.Double?, points: Swift.Double?, minRedemptionPoints: Swift.Double?, accountId: Swift.String?, accountTypeCode: Swift.String?)
-  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -1477,21 +1203,13 @@ public class AccountTypeDataModels : Swift.Codable {
     case paNS
     case activatonCriteria, isPaymentEnabled
     case offersModel
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
-    #endif
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(stringValue: Swift.String)
-    #endif
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(intValue: Swift.Int)
-    #endif
     public typealias RawValue = Swift.String
-    #if compiler(>=5.3) && $NonescapableTypes
     public var intValue: Swift.Int? {
       get
     }
-    #endif
     public var rawValue: Swift.String {
       get
     }
@@ -1510,15 +1228,11 @@ public struct SsdDetect {
   }
   public init()
   public static func initializeModels(contentsOf url: Foundation.URL)
-  #if compiler(>=5.3) && $NonescapableTypes
   public mutating func predict(image: UIKit.UIImage) -> Swift.String?
-  #endif
 }
 @objc @_inheritsConvenienceInitializers public class FawryPayByRefManager : ObjectiveC.NSObject {
   public func payByReferenceManagerLauncher(onpayByReferenceCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func hitFawryPayPayment(validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil)
-  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1530,12 +1244,8 @@ public struct SsdDetect {
   public typealias onAddNewCard = (FawryPaySDK.SavedCard) -> Swift.Void
   public typealias onDismiss = () -> Swift.Void
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
-  #endif
   @objc deinit
 }
 extension UIKit.UIViewController {
@@ -1564,9 +1274,7 @@ public struct SectionModel {
   @objc public var name: Swift.String?
   @objc public var image: UIKit.UIImage?
   public init(number: Swift.String)
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func expiryForDisplay() -> Swift.String?
-  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency public class ScanViewController : FawryPaySDK.ScanBaseViewController {
@@ -1582,25 +1290,15 @@ public struct SectionModel {
   @objc @_Concurrency.MainActor @preconcurrency public var positionCardFont: UIKit.UIFont?
   @objc @_Concurrency.MainActor @preconcurrency public var skipButtonFont: UIKit.UIFont?
   @objc @_Concurrency.MainActor @preconcurrency public var backButtonImageToTextDelta: Foundation.NSNumber?
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func createViewController(withDelegate delegate: (any FawryPaySDK.ScanDelegate)? = nil) -> FawryPaySDK.ScanViewController?
-  #endif
   @objc @_Concurrency.MainActor @preconcurrency public func cancel(callDelegate: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLayoutSubviews()
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override public func showCardNumber(_ number: Swift.String, expiry: Swift.String?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override public func onScannedCard(number: Swift.String, expiryYear: Swift.String?, expiryMonth: Swift.String?, scannedImage: UIKit.UIImage?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
-  #endif
   @objc deinit
 }
 public struct Select_CancelTenureResponse : Swift.Codable {
@@ -1608,9 +1306,7 @@ public struct Select_CancelTenureResponse : Swift.Codable {
   public let errors: FawryPaySDK.ErrorResponse?
   public let success: Swift.Bool?
   public let error: FawryPaySDK.ErrorResponse?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(isSuccess: Swift.Bool?, errors: FawryPaySDK.ErrorResponse?, success: Swift.Bool?, error: FawryPaySDK.ErrorResponse?)
-  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
@@ -1665,29 +1361,21 @@ public class CardOffersPerBank : Swift.Codable {
 }
 @objc @_inheritsConvenienceInitializers public class SouhoolaManager : ObjectiveC.NSObject {
   public func souhoolaManagerLauncher(onGetSouhoolaInstallmentPlansCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.GetSouhoolaInstallmentPlansResponse>, onGetSouhoolaDownPaymentCallBacks: FawryPaySDK.CallBacks<[FawryPaySDK.TenureInstallmentPlans]>, onGetSouhoolaSelectedTenureCallBacks: FawryPaySDK.CallBacks<Swift.Bool>, onGetSouhoolaSelectedTenureSeamlessCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.Select_CancelTenureResponse>, onGetSouhoolaReviewTransactionDataCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.ReviewTransactionResponse>, onSendOTPCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.SendOTPResponse>, onPayUsingSouhoolaCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>, onCancelTransactionCallBacks: FawryPaySDK.CallBacks<FawryPaySDK.Select_CancelTenureResponse>)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getSouhoolaInstallmentPlans(souhoolaCustomerNumber: Swift.String, customerPassword: Swift.String, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.GetSouhoolaInstallmentPlansResponse>)
-  #endif
   public func getSouhoolaEditDownPayment(fawryReferenceNumber: Swift.String, downPayment: Swift.Double, callBacks: FawryPaySDK.CallBacks<[FawryPaySDK.TenureInstallmentPlans]>)
   public func getSelectedTenure(referenceNumber: Swift.String, tenure: Swift.Int, offerCode: Swift.String, callBacks: FawryPaySDK.CallBacks<Swift.Bool>)
   public func getSelectedTenureSeamless(referenceNumber: Swift.String, tenure: Swift.Int, offerCode: Swift.String, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.Select_CancelTenureResponse>)
   public func getReviewTransactionData(fawryReferenceNumber: Swift.String, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.ReviewTransactionResponse>)
   public func sendOTP(fawryReferenceNumber: Swift.String, resendOTP: Swift.Bool = false, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.SendOTPResponse>)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payUsingSouhoola(fawryReferenceNumber: Swift.String, otpString: Swift.String, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.PaymentChargeResponse>)
-  #endif
   public func cancelTransaction(fawryReferenceNumber: Swift.String, callBacks: FawryPaySDK.CallBacks<FawryPaySDK.Select_CancelTenureResponse>)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func getSouhoolaInstallmentPlansStep1(souhoolaCustomerNumber: Swift.String, customerPassword: Swift.String, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil)
-  #endif
   public func getSouhoolaEditDownPaymentStep2(fawryReferenceNumber: Swift.String, downPayment: Swift.Double)
   public func getSelectedTenureStep3(fawryReferenceNumber: Swift.String, tenure: Swift.Int, offerCode: Swift.String)
   public func getReviewTransactionDataStep4(fawryReferenceNumber: Swift.String)
   public func sendOTPStep5(fawryReferenceNumber: Swift.String, resendOTP: Swift.Bool = false)
   public func cancelTransactionStep6(fawryReferenceNumber: Swift.String)
-  #if compiler(>=5.3) && $NonescapableTypes
   public func payUsingSouhoolaStep7(fawryReferenceNumber: Swift.String, otpString: Swift.String, validateVoucherRequestParams: FawryPaySDK.FPValidateVoucherRequestParams? = nil)
-  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1695,14 +1383,18 @@ public class CardOffersPerBank : Swift.Codable {
   @_Concurrency.MainActor @preconcurrency public var buttonContainer: FawryPaySDK.RadioButtonContainer {
     get
   }
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func didAddSubview(_ subview: UIKit.UIView)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func willRemoveSubview(_ subview: UIKit.UIView)
   @_Concurrency.MainActor @preconcurrency public func addButton(_ button: FawryPaySDK.RadioButtonContainer.Kind)
   @_Concurrency.MainActor @preconcurrency public func removeButton(_ view: FawryPaySDK.RadioButtonContainer.Kind)
   @objc deinit
+}
+public class LaunchInstaPayModel : Swift.Codable {
+  public init(instapayScheme: Swift.String?)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BaseViewController : UIKit.UIViewController {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
@@ -1721,12 +1413,8 @@ public class CardOffersPerBank : Swift.Codable {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
-  #endif
 }
 extension FawryPaySDK.BaseViewController : UIKit.UIGestureRecognizerDelegate {
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
@@ -1805,15 +1493,9 @@ public class Reachability {
   public var connection: FawryPaySDK.Reachability.Connection {
     get
   }
-  #if compiler(>=5.3) && $NonescapableTypes
   required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   convenience public init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   convenience public init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
-  #endif
   @objc deinit
 }
 extension FawryPaySDK.Reachability {
@@ -1847,12 +1529,8 @@ public enum SectionType {
   }
 }
 public class SectionViewModel {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(rowViewModels: [any FawryPaySDK.RowViewModel], isEnable: Swift.Bool, sectionHeight: Swift.Float, sectionModel: FawryPaySDK.SectionModel?, sectionType: FawryPaySDK.SectionType?, themeStyle: FawryPaySDK.ThemeStyleFawryPaySDK? = nil, tag: Swift.Int? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(rowViewModels: [any FawryPaySDK.RowViewModel], isEnable: Swift.Bool, sectionHeight: Swift.Float, sectionModel: FawryPaySDK.SectionModel?, sectionType: FawryPaySDK.SectionType?, themeStyle: FawryPaySDK.ThemeStyleFawryPaySDK? = nil, dimmed: Swift.Bool)
-  #endif
   @objc deinit
 }
 public struct TenureInstallmentPlans : Swift.Codable, Swift.Equatable {
@@ -1865,9 +1543,7 @@ public struct TenureInstallmentPlans : Swift.Codable, Swift.Equatable {
   public let offerCode: Swift.String?
   public let offerDescription: Swift.String?
   public let selected: Swift.Bool?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(tenure: Swift.Int?, installment: Swift.Double?, isSelected: Swift.Bool?, tenureNo: Swift.Int?, installmentAmount: Swift.Double?, adminFees: Swift.Double?, offerCode: Swift.String?, offerDescription: Swift.String?, selected: Swift.Bool?)
-  #endif
   public init(from decoder: any Swift.Decoder) throws
   public static func == (a: FawryPaySDK.TenureInstallmentPlans, b: FawryPaySDK.TenureInstallmentPlans) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
@@ -1890,9 +1566,7 @@ public struct TenureInstallmentPlans : Swift.Codable, Swift.Equatable {
   public var shouldShowReasonOfTransfer: Swift.Bool
   public var reasonOfTransfer: Swift.String?
   public var screenTitle: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(onUsBTC: Swift.Int? = nil, offUsBTC: Swift.Int? = nil, internationalBANs: [Swift.String]? = nil, BANValidationSize: Swift.Int? = nil, onUsAvlFees: Swift.Double? = nil, offUsAvlFees: Swift.Double? = nil, minValue: Swift.Double? = nil, maxValue: Swift.Double? = nil, avlValue: Swift.Double? = nil, billingAcct: Swift.String? = nil, beneficiaryWalletNumber: Swift.String? = nil, beneficiaryName: Swift.String? = nil, avlAmountDataType: FawryPaySDK.AVLAmountDataType = .double, shouldShowBeneficiaryName: Swift.Bool = true, shouldShowReasonOfTransfer: Swift.Bool = true, reasonOfTransfer: Swift.String? = nil, screenTitle: Swift.String? = nil)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -1911,9 +1585,7 @@ public enum AVLAmountDataType : Swift.Codable {
 public class LaunchFawryBusinessModel : Swift.Codable {
   public var billTypeCode: Swift.String?
   public var destinationAccountNumber: Swift.String?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(billTypeCode: Swift.String? = nil, destinationAccountNumber: Swift.String? = nil)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -1930,9 +1602,7 @@ public enum SDKMode : Swift.String {
   case myPoints
   case createVoucher
   case selectAddress
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
-  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -1940,9 +1610,7 @@ public enum SDKMode : Swift.String {
 }
 public enum ViewType : Swift.String {
   case addCard
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
-  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -1954,9 +1622,7 @@ public enum FawrySDKResponseCode : Swift.Int {
   case userCanclled
   case generalError
   case successSavedUserCard
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
-  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -1969,9 +1635,7 @@ public enum FawrySDKStatusCode : Swift.Int, Swift.Codable {
   case sdkNotIntitalized
   case paramterMissing
   case contollerNotFound
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
-  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -1996,31 +1660,28 @@ public struct GetForsaInstallmentPlansResponse : Swift.Codable {
   public var downPaymentEnabled: Swift.Bool?
   public var orderRefNumber: Swift.String?
   public var bnplOfferModel: FawryPaySDK.BNPLOfferModel?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(id: Swift.Int?, title: Swift.String?, forsaInstallmentPlanModels: [FawryPaySDK.ForsaInstallmentPlanModel]?, downPaymentEnabled: Swift.Bool?, orderRefNumber: Swift.String?, bnplOfferModel: FawryPaySDK.BNPLOfferModel?)
-  #endif
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
 }
+public class CorrelationConfig : Swift.Codable {
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 public protocol CustomLocalizedErrorProtocol : Foundation.LocalizedError {
-  #if compiler(>=5.3) && $NonescapableTypes
   var title: Swift.String? { get }
-  #endif
   var code: Swift.Int { get }
 }
 @_hasMissingDesignatedInitializers @objc public class OrderingPaySDKError : ObjectiveC.NSObject, FawryPaySDK.CustomLocalizedErrorProtocol {
   @objc public var title: Swift.String?
   @objc public var code: Swift.Int
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public var errorDescription: Swift.String? {
     @objc get
   }
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
   @objc public var failureReason: Swift.String? {
     @objc get
   }
-  #endif
   @objc public var returnedResponse: Any?
   @objc deinit
 }
@@ -2038,9 +1699,7 @@ public protocol RadioButtonDelegate : AnyObject {
     get
     set
   }
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @objc deinit
 }
@@ -2086,9 +1745,7 @@ extension UIKit.UIColor {
   }
 }
 public class FawryLaunchModel : Swift.Codable {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(customer: FawryPaySDK.LaunchCustomerModel?, merchant: FawryPaySDK.LaunchMerchantModel?, chargeItems: [FawryPaySDK.ChargeItemsParamsModel]?, signature: Swift.String?, allowVoucher: Swift.Bool = false, beneficiaryName: Swift.String? = nil, beneficiaryWalletNumber: Swift.String? = nil, avlFees: Swift.Double? = nil, paymentWithCardToken: Swift.Bool = false, skipReceipt: Swift.Bool = true, skipCustomerInput: Swift.Bool = false, paymentMethod: FawryPaySDK.Payment_Method = .all, orderRefNumber: Swift.String? = nil, paymentChargeResponse: FawryPaySDK.PaymentChargeResponse? = nil, externalPaymentMethods: [FawryPaySDK.PaymentMethods]? = nil, avlInfo: FawryPaySDK.AVLInfo? = nil, checkoutModel: FawryPaySDK.LaunchCheckoutModel? = nil, applePayModel: FawryPaySDK.LaunchApplePayModel? = nil, fawryBusinessModel: FawryPaySDK.LaunchFawryBusinessModel? = nil, enableToknization: Swift.Bool? = false)
-  #endif
+  public init(customer: FawryPaySDK.LaunchCustomerModel?, merchant: FawryPaySDK.LaunchMerchantModel?, chargeItems: [FawryPaySDK.ChargeItemsParamsModel]?, paymentSignture: Swift.String? = nil, tokenizationSignature: Swift.String? = nil, allowVoucher: Swift.Bool = false, beneficiaryName: Swift.String? = nil, beneficiaryWalletNumber: Swift.String? = nil, avlFees: Swift.Double? = nil, paymentWithCardToken: Swift.Bool = false, skipReceipt: Swift.Bool = true, skipCustomerInput: Swift.Bool = false, paymentMethod: FawryPaySDK.Payment_Method = .all, orderRefNumber: Swift.String? = nil, paymentChargeResponse: FawryPaySDK.PaymentChargeResponse? = nil, avlInfo: FawryPaySDK.AVLInfo? = nil, checkoutModel: FawryPaySDK.LaunchCheckoutModel? = nil, applePayModel: FawryPaySDK.LaunchApplePayModel? = nil, instapayModel: FawryPaySDK.LaunchInstaPayModel? = nil, fawryBusinessModel: FawryPaySDK.LaunchFawryBusinessModel? = nil, enableToknization: Swift.Bool? = false, apiPath: Swift.String? = nil)
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
@@ -2105,9 +1762,7 @@ public enum ServiceTypeCode : Swift.String {
   case pickup
   case delivery
   case dineIn
-  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
-  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -2115,6 +1770,7 @@ public enum ServiceTypeCode : Swift.String {
 }
 public class PaymentChargeResponse : Swift.Codable {
   public var merchantRefNumber: Swift.String?
+  public var status: Swift.String?
   public var statusDescription: Swift.String?
   public var customerMail: Swift.String?
   public var type: Swift.String?
@@ -2161,22 +1817,23 @@ public class PaymentChargeResponse : Swift.Codable {
   public var cardTokenStatusDescription: Swift.String?
   public var cardToken: Swift.String?
   public var cardTokenResponse: FawryPaySDK.CardTokenResponse?
+  public var correlationConfig: FawryPaySDK.CorrelationConfig?
+  public var customerName: Swift.String?
+  public var customerEmail: Swift.String?
+  public var ipnIntentString: Swift.String?
   public init()
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(merchantRefNumber: Swift.String?, statusDescription: Swift.String?, customerMail: Swift.String?, type: Swift.String?, referenceNumber: Swift.String?, customerProfileId: Swift.String?, expirationTime: Swift.Double?, paymentMethod: Swift.String?, customerMobile: Swift.String?, signature: Swift.String?, statusCode: Swift.Int?, fawryFees: Swift.Double?, paymentAmount: Swift.Double?, orderAmount: Swift.Double?, walletQr: Swift.String?, shippingFees: Swift.Double?, nextAction: FawryPaySDK.NextActionModel?, usedBTC: Swift.Int?, orderStatus: Swift.String?, interestAmount: Swift.Double?, upFrontFees: Swift.Double?, valUBillData: FawryPaySDK.ValuBillDataModel? = nil, loanNumber: Swift.String?, downPayment: Swift.Double?, totalFinancedAmount: Swift.Double?, adminFees: Swift.String?, interestRate: Swift.Double?, migsTransactionNumber: Swift.Int?, amount: Swift.Double?, customerProperties: FawryPaySDK.CustomerProperties?, paymentTime: Swift.Int?, taxes: Swift.Double?, paymentMethodName: Swift.String?, promoTotalDiscount: Swift.Double? = nil, monetaryValue: Swift.Double? = nil, orderApiKey: Swift.String? = nil, basketPayment: Swift.Bool? = nil, requestUID: Swift.String? = nil, cardNumber: Swift.String? = nil, cardExpirationMonth: Swift.String? = nil, cardExpirationYear: Swift.String? = nil, cardHolderName: Swift.String? = nil, cardTokenStatusCode: Swift.Int? = nil, cardTokenStatusDescription: Swift.String? = nil, cardToken: Swift.String? = nil, cardTokenResponse: FawryPaySDK.CardTokenResponse? = nil)
-  #endif
+  public init(merchantRefNumber: Swift.String?, statusDescription: Swift.String?, customerMail: Swift.String?, type: Swift.String?, referenceNumber: Swift.String?, customerProfileId: Swift.String?, expirationTime: Swift.Double?, paymentMethod: Swift.String?, customerMobile: Swift.String?, signature: Swift.String?, statusCode: Swift.Int?, fawryFees: Swift.Double?, paymentAmount: Swift.Double?, orderAmount: Swift.Double?, walletQr: Swift.String?, shippingFees: Swift.Double?, nextAction: FawryPaySDK.NextActionModel?, usedBTC: Swift.Int?, orderStatus: Swift.String?, interestAmount: Swift.Double?, upFrontFees: Swift.Double?, valUBillData: FawryPaySDK.ValuBillDataModel? = nil, loanNumber: Swift.String?, downPayment: Swift.Double?, totalFinancedAmount: Swift.Double?, adminFees: Swift.String?, interestRate: Swift.Double?, migsTransactionNumber: Swift.Int?, amount: Swift.Double?, customerProperties: FawryPaySDK.CustomerProperties?, paymentTime: Swift.Int?, taxes: Swift.Double?, paymentMethodName: Swift.String?, promoTotalDiscount: Swift.Double? = nil, monetaryValue: Swift.Double? = nil, orderApiKey: Swift.String? = nil, basketPayment: Swift.Bool? = nil, requestUID: Swift.String? = nil, cardNumber: Swift.String? = nil, cardExpirationMonth: Swift.String? = nil, cardExpirationYear: Swift.String? = nil, cardHolderName: Swift.String? = nil, cardTokenStatusCode: Swift.Int? = nil, cardTokenStatusDescription: Swift.String? = nil, cardToken: Swift.String? = nil, cardTokenResponse: FawryPaySDK.CardTokenResponse? = nil, correlationConfig: FawryPaySDK.CorrelationConfig? = nil, customerName: Swift.String? = nil, customerEmail: Swift.String? = nil, ipnIntentString: Swift.String? = nil)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 public struct CustomerProperties : Swift.Codable {
+  public let merchantRefNumber: Swift.String?, orderNumber: Swift.String?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct NextActionModel : Swift.Codable {
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(redirectUrl: Swift.String?, redirectType: Swift.String?)
-  #endif
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -2186,9 +1843,7 @@ public class CardTokenResponse : Swift.Codable {
   final public let statusCode: Swift.Int?
   final public let statusDescription: Swift.String?
   final public let basketPayment: Swift.Bool?
-  #if compiler(>=5.3) && $NonescapableTypes
   public init(type: Swift.String? = nil, returnToMerchantEnabled: Swift.Bool? = nil, statusCode: Swift.Int? = nil, statusDescription: Swift.String? = nil, basketPayment: Swift.Bool? = nil)
-  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -2200,21 +1855,13 @@ public class CardTokenResponse : Swift.Codable {
     case installmentPlans
     case orderReferenceNumber
     case bnplOfferModel
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
-    #endif
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(stringValue: Swift.String)
-    #endif
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(intValue: Swift.Int)
-    #endif
     public typealias RawValue = Swift.String
-    #if compiler(>=5.3) && $NonescapableTypes
     public var intValue: Swift.Int? {
       get
     }
-    #endif
     public var rawValue: Swift.String {
       get
     }
@@ -2231,21 +1878,13 @@ public class AmanOtpResponse : Swift.Codable {
     case resultId
     case resultMessage
     case comment
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
-    #endif
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(stringValue: Swift.String)
-    #endif
-    #if compiler(>=5.3) && $NonescapableTypes
     public init?(intValue: Swift.Int)
-    #endif
     public typealias RawValue = Swift.String
-    #if compiler(>=5.3) && $NonescapableTypes
     public var intValue: Swift.Int? {
       get
     }
-    #endif
     public var rawValue: Swift.String {
       get
     }
@@ -2265,13 +1904,9 @@ public enum RadioCheckboxStyle {
     @objc get
     @objc set
   }
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency convenience public init?(type buttonType: UIKit.UIButton.ButtonType)
-  #endif
   @_Concurrency.MainActor @preconcurrency public var style: FawryPaySDK.RadioCheckboxStyle {
     get
     set

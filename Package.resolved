@@ -1,5 +1,5 @@
 {
-  "originHash" : "16659e9ebf9af82ed6e31859e1d9ed27ce22329ade39a709e011a37cff58b0f0",
+  "originHash" : "2306e6366ecb600ed6c12331583664bf2a05f2fbf491972d126c0c8a95b3beec",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -17,15 +17,6 @@
       "state" : {
         "revision" : "c00b1ae9fa1ad8af4465bb6ca901f6943fc98eba",
         "version" : "6.5.16"
-      }
-    },
-    {
-      "identity" : "netfox",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kasketis/netfox",
-      "state" : {
-        "revision" : "557576032736fd3140422baefb68b8f76c55088f",
-        "version" : "1.21.0"
       }
     }
   ],
