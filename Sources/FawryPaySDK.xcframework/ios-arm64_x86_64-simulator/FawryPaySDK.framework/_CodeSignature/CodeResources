@@ -778,7 +778,7 @@
 		</data>
 		<key>Modules/FawryPaySDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		2UVKeeqaDBex/+LH0G9TG2n0mXg=
+		CegLqWOor8a37wfuFINIB19R2Gk=
 		</data>
 		<key>Modules/FawryPaySDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -794,11 +794,11 @@
 		</data>
 		<key>Modules/FawryPaySDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		BGMmKVMwKVxNPJ/w+1nnPxpv240=
+		xvGYgIFjzBhbGjiyaYdgL259Vdo=
 		</data>
 		<key>Modules/FawryPaySDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		2UVKeeqaDBex/+LH0G9TG2n0mXg=
+		CegLqWOor8a37wfuFINIB19R2Gk=
 		</data>
 		<key>Modules/FawryPaySDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -814,7 +814,7 @@
 		</data>
 		<key>Modules/FawryPaySDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		43YLAmMjSE0kIY3vnLWFWvi0qGg=
+		mTfP+wd8+aBVKyuqPMQtZVFkf9g=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -2701,7 +2701,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RdWRYE2VPqP3Bcy9iOpKd36rvAxmsuoqa+Y/Lt3JYSc=
+			EoG0Vi8YoRGoyJe9g0Y8Fa6xjRNIVb2ZO4PXcA1DL2A=
 			</data>
 		</dict>
 		<key>Modules/FawryPaySDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -2729,14 +2729,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fz3+g2Lgvxv5omxEoJWFDIE90DyQGIH6FHEnZuPaDmc=
+			Xuu9Cnm/Wy/l6qo6aug02Fb74RvAOIfcjFHpaGXrR+k=
 			</data>
 		</dict>
 		<key>Modules/FawryPaySDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RdWRYE2VPqP3Bcy9iOpKd36rvAxmsuoqa+Y/Lt3JYSc=
+			EoG0Vi8YoRGoyJe9g0Y8Fa6xjRNIVb2ZO4PXcA1DL2A=
 			</data>
 		</dict>
 		<key>Modules/FawryPaySDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -2764,7 +2764,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xs5U+Bf+bTziysL/KofaqehrWQ4VK4EPK7lGgxg5OJ8=
+			67GavV5D+BzqUguSs0IFOJWe9WIHMyTRIkucJdWkL7g=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
