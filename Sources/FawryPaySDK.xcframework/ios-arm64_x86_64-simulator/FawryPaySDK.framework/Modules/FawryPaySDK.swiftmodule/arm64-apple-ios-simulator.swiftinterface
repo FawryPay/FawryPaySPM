@@ -972,7 +972,6 @@ public struct Currency {
   public static let egp: Swift.String
 }
 public enum Payment_Method : Swift.String, Swift.Codable {
-  case all
   case payAtFawry
   case card
   case mWallet
@@ -985,6 +984,7 @@ public enum Payment_Method : Swift.String, Swift.Codable {
   case aman
   case myFawry
   case applePay
+  case loyalty
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -1745,7 +1745,7 @@ extension UIKit.UIColor {
   }
 }
 public class FawryLaunchModel : Swift.Codable {
-  public init(customer: FawryPaySDK.LaunchCustomerModel?, merchant: FawryPaySDK.LaunchMerchantModel?, chargeItems: [FawryPaySDK.ChargeItemsParamsModel]?, paymentSignture: Swift.String? = nil, tokenizationSignature: Swift.String? = nil, allowVoucher: Swift.Bool = false, beneficiaryName: Swift.String? = nil, beneficiaryWalletNumber: Swift.String? = nil, avlFees: Swift.Double? = nil, paymentWithCardToken: Swift.Bool = false, skipReceipt: Swift.Bool = true, skipCustomerInput: Swift.Bool = false, paymentMethod: FawryPaySDK.Payment_Method = .all, orderRefNumber: Swift.String? = nil, paymentChargeResponse: FawryPaySDK.PaymentChargeResponse? = nil, avlInfo: FawryPaySDK.AVLInfo? = nil, checkoutModel: FawryPaySDK.LaunchCheckoutModel? = nil, applePayModel: FawryPaySDK.LaunchApplePayModel? = nil, instapayModel: FawryPaySDK.LaunchInstaPayModel? = nil, fawryBusinessModel: FawryPaySDK.LaunchFawryBusinessModel? = nil, enableToknization: Swift.Bool? = false, apiPath: Swift.String? = nil)
+  public init(customer: FawryPaySDK.LaunchCustomerModel?, merchant: FawryPaySDK.LaunchMerchantModel?, chargeItems: [FawryPaySDK.ChargeItemsParamsModel]?, paymentSignture: Swift.String? = nil, tokenizationSignature: Swift.String? = nil, allowVoucher: Swift.Bool = false, beneficiaryName: Swift.String? = nil, beneficiaryWalletNumber: Swift.String? = nil, avlFees: Swift.Double? = nil, paymentWithCardToken: Swift.Bool = false, skipReceipt: Swift.Bool = true, skipCustomerInput: Swift.Bool = false, excludePaymentMethods: [FawryPaySDK.Payment_Method]? = nil, orderRefNumber: Swift.String? = nil, paymentChargeResponse: FawryPaySDK.PaymentChargeResponse? = nil, avlInfo: FawryPaySDK.AVLInfo? = nil, checkoutModel: FawryPaySDK.LaunchCheckoutModel? = nil, applePayModel: FawryPaySDK.LaunchApplePayModel? = nil, instapayModel: FawryPaySDK.LaunchInstaPayModel? = nil, fawryBusinessModel: FawryPaySDK.LaunchFawryBusinessModel? = nil, enableToknization: Swift.Bool? = false, apiPath: Swift.String? = nil)
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
